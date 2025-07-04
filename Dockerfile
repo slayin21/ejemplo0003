@@ -16,7 +16,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Exponemos el puerto que usará la app (Render define PORT)
-ENV PORT=8080
+ENV PORT=8088
 EXPOSE ${PORT}
 
 # Ejecutamos la aplicación
