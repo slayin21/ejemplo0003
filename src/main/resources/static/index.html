@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Java: Servicios Web</title>
+    <script src="liga.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #e9ebee;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        .section-card h2 {
+            color: #34495e;
+            margin-top: 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            font-size: 1.8em;
+        }
+        #error {
+            background-color: #ffebee;
+            border: 1px solid #e74c3c;
+            color: #e74c3c;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745; /* Green for actions */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 180px;
+            font-size: 0.9em;
+        }
+        p {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .output-div {
+            background-color: #f9f9f9;
+            border: 1px dashed #ddd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            min-height: 30px; /* Ensure visibility */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Liga</h1>
+<div id="error" style="color: red"></div>
+
+<div class="section-card">
+    <h2>Listado de equipos</h2>
+    <button type="submit" onclick="verEquipos()">Listar Equipos</button>
+    <div id="listado" class="output-div"></div>
+</div>
+
+<div class="section-card">
+    <h2>Consulta un equipo</h2>
+    Id: <input type="text" id="aConsultar" value="E1" />
+    <button type="submit" onclick="verEquipo()">Ver equipo</button>
+    <div id="consulta" class="output-div"></div>
+</div>
+
+<div class="section-card">
+    <h2>Crear equipo</h2>
+    Id: <input type="text" id="idACrear" value="E3" />
+    Nombre: <input type="text" id="nombreACrear" value="Azul" />
+    <button type="submit" onclick="crearEquipo()">Crear equipo</button>
+    <div id="creado" class="output-div"></div>
+</div>
+
+<div class="section-card">
+    <h2>Modificar equipo</h2>
+    <p>Primero busca el equipo con "Ver equipo"</p>
+    Id: <input type="text" readonly id="idAModificar" />
+    Nombre: <input type="text" id="nombreAModificar" />
+    <button type="submit" onclick="modificarEquipo()">Modificar equipo</button>
+    <div id="modificado" class="output-div"></div>
+</div>
+
+<div class="section-card">
+    <h2>A&ntilde;adir jugador a equipo</h2>
+    Id Equipo: <input type="text" id="idEquipoAnadir" value="E1" />
+    Id Jugador: <input type="text" id="idJugadorAnadir" value="J05" />
+    <button type="submit" onclick="anadirJugador()">A&ntilde;adir jugador a equipo</button>
+    <div id="anadido" class="output-div"></div>
+</div>
+
+<div class="section-card">
+    <h2>Borrar equipo</h2>
+    Id: <input type="text" id="aBorrar" value="E1" />
+    <button type="submit" onclick="borrarEquipo()">Borrar equipo</button>
+    <div id="borrado" class="output-div"></div>
+</div>
+
+</body>
+</html>
